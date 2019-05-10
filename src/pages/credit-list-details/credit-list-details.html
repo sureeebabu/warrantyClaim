@@ -1,0 +1,77 @@
+<!--
+  Generated template for the CreditListDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Credit Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-grid>
+<ion-row>
+<ion-col col-12 text-center>
+<ion-item>
+  <ion-label>Material Code :</ion-label>
+  <ion-input type="text" [(ngModel)]="MaterialCode" [disabled]="!edit" name="MaterialCode"></ion-input>
+</ion-item>
+</ion-col>
+</ion-row>
+<ion-row>
+<ion-col col-12 text-center>
+<ion-item>
+  <ion-label>Material Name :</ion-label>
+  <ion-input type="text" [(ngModel)]="MaterialName" [disabled]="!edit" name="MaterialName"></ion-input>
+</ion-item>
+</ion-col>
+</ion-row>
+<ion-row>
+<ion-col col-12 text-center>
+<ion-item>
+  <ion-label>Qty :</ion-label>
+  <ion-input type="text" [(ngModel)]="MaterialQty" [disabled]="!edit" name="MaterialQty"></ion-input>
+</ion-item>
+</ion-col>
+</ion-row>
+<ion-row>
+<ion-col col-12 text-center>
+<ion-item>
+  <ion-label>Warrenty :</ion-label>
+  <ion-input type="text" [(ngModel)]="MaterialWarrenty" [disabled]="!edit" name="MaterialWarrenty"></ion-input>
+</ion-item>
+</ion-col>
+</ion-row>
+<ion-row>
+<ion-col col-12 text-center>
+<ion-item>
+  <ion-label>Upload :</ion-label>
+  <ion-input type="text" [(ngModel)]="MaterialUpload" [disabled]="!edit" name="MaterialUpload"></ion-input>
+</ion-item>
+</ion-col>
+</ion-row>
+<ion-row>
+<ion-col col-12 text-center>
+<ion-item>
+  <ion-label>File :</ion-label>
+	<ion-input type="text" [(ngModel)]="MaterialFile" [disabled]="!edit" name="MaterialFile"></ion-input>
+
+</ion-item>
+</ion-col>
+<ion-col col-12 text-center>
+<ion-item>
+  <ion-label>Claim Status :</ion-label>
+	<ion-input type="text" [(ngModel)]="MaterialClaim" [disabled]="!edit" name="MaterialClaim"></ion-input>
+
+</ion-item>
+</ion-col>
+</ion-row>
+</ion-grid>
+
+</ion-content>
+

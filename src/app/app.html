@@ -1,0 +1,15 @@
+<ion-menu [content]="content" side="left">
+    <ion-header>
+        <ion-toolbar color="primary">
+            <ion-title>{{this.Username}}</ion-title>
+
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <button menuClose ion-item (click)="ChangePassword()"> <ion-icon ios="ios-key" md="md-key" item-left></ion-icon>Change Password</button>
+            <button menuClose ion-item (click)="LogOut()"><ion-icon ios="ios-power" md="md-power" item-left></ion-icon>Logout</button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+<ion-nav [root]="homePage" #content swipeBackEnabled="true"></ion-nav>

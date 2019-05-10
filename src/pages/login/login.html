@@ -1,0 +1,29 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>&nbsp;</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <img src="../../assets/imgs/simpson.jpg" style="height:20%; width:100%; padding-left:20px;" />
+    <form (ngSubmit)="login()">
+        <ion-item>
+            <ion-label floating>Username :</ion-label>
+            <ion-input type="text" [(ngModel)]="Username" name="Username"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Password :</ion-label>
+            <ion-input type="password" [(ngModel)]="Password" name="Password"></ion-input>
+        </ion-item>
+        <ion-row center>
+            <ion-col text-center>
+                <button ion-button type='submit'>Login</button>
+            </ion-col>
+
+        </ion-row>
+        <ion-row center>
+            <ion-col text-right (click)="RegisterMeth()">
+                <h6 ion-text color="primary">Register ?</h6>
+            </ion-col>
+        </ion-row>
+    </form>
+</ion-content>

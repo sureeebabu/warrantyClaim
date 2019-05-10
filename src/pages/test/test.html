@@ -1,0 +1,123 @@
+<ion-header>
+  <ion-navbar color='primary'>
+
+    <ion-title>List Invoice</ion-title>
+  </ion-navbar>
+<ion-toolbar>
+  <ion-searchbar *ngIf="typee" (ionInput)="getItems($event)" placeholder="Search Invoice"></ion-searchbar>
+  <ion-searchbar *ngIf="!typee" placeholder="No Records To Search"></ion-searchbar>
+</ion-toolbar>
+</ion-header>
+<ion-content padding class="bg-content">
+<ion-list *ngIf="typee">
+	<ion-list *ngFor="let item of typee; index as i">
+		<ion-card style="border-radius: 3px;" *ngIf="item.claim_status==null">
+			<ion-grid>
+				<ion-card-content style="color: #333333;">
+					<ion-row style="margin-left:-20px;">
+					<ion-col col-10>
+						<ion-row class="bottomRow">	
+							<ion-col col-3><strong>No</strong></ion-col><ion-col col-1 text-center> : </ion-col><ion-col col-8>{{item.invoice_no}}</ion-col>
+						</ion-row>
+						<ion-row class="bottomRow">	
+							<ion-col col-3><strong>Date</strong></ion-col><ion-col col-1 text-center> : </ion-col><ion-col col-8>{{item.invoice_date|date}}</ion-col>
+						</ion-row>
+						<ion-row class="bottomRow">	
+							<ion-col col-3><strong>Status</strong></ion-col><ion-col col-1 text-center> : </ion-col><ion-col col-8>--NA--</ion-col>
+						</ion-row>						
+					</ion-col>
+					<ion-col col-2 right (click)="ViewClick(item.invoice_no)">
+						<button ion-button color="primary">
+								<ion-icon name="ios-arrow-forward" color="light"></ion-icon>
+						</button>
+					</ion-col>
+					</ion-row>		
+				</ion-card-content>		
+			</ion-grid>
+		</ion-card>
+<ion-card style="border-radius: 3px; background-color:#FF0000;" *ngIf="item.claim_status=='Approval Pending'">
+			<ion-grid>
+				<ion-card-content style="color: #FFFFFF;">
+					<ion-row style="margin-left:-20px;">
+					<ion-col col-10>
+						<ion-row class="bottomRow">	
+							<ion-col col-3><strong>No</strong></ion-col><ion-col col-1 text-center> : </ion-col><ion-col col-8>{{item.invoice_no}}</ion-col>
+						</ion-row>
+						<ion-row class="bottomRow">	
+							<ion-col col-3><strong>Date</strong></ion-col><ion-col col-1 text-center> : </ion-col><ion-col col-8>{{item.invoice_date|date}}</ion-col>
+						</ion-row>
+						<ion-row class="bottomRow">	
+							<ion-col col-3><strong>Status</strong></ion-col><ion-col col-1 text-center> : </ion-col><ion-col col-8>{{item.claim_status}}</ion-col>
+						</ion-row>						
+					</ion-col>
+					<ion-col col-2 right (click)="ViewClick(item.invoice_no)">
+						<button ion-button color="greenyellow">
+								<ion-icon name="ios-arrow-forward" color="dark"></ion-icon>
+						</button>
+					</ion-col>
+					</ion-row>		
+				</ion-card-content>		
+			</ion-grid>
+		</ion-card>	
+<ion-card style="border-radius: 3px; background-color:#008000;" *ngIf="item.claim_status=='Completed' || item.claim_status=='Cancelled' || item.claim_status=='Sales Person Cancelled'">
+			<ion-grid>
+				<ion-card-content style="color: #FFFFFF;">
+					<ion-row style="margin-left:-20px;">
+					<ion-col col-10>
+						<ion-row class="bottomRow">	
+							<ion-col col-3><strong>No</strong></ion-col><ion-col col-1 text-center> : </ion-col><ion-col col-8>{{item.invoice_no}}</ion-col>
+						</ion-row>
+						<ion-row class="bottomRow">	
+							<ion-col col-3><strong>Date</strong></ion-col><ion-col col-1 text-center> : </ion-col><ion-col col-8>{{item.invoice_date|date}}</ion-col>
+						</ion-row>
+						<ion-row class="bottomRow">	
+							<ion-col col-3><strong>Status</strong></ion-col><ion-col col-1 text-center> : </ion-col><ion-col col-8>{{item.claim_status}}</ion-col>
+						</ion-row>						
+					</ion-col>
+					<ion-col col-2 right (click)="ViewClick(item.invoice_no)">
+						<button ion-button color="greenForest">
+								<ion-icon name="ios-arrow-forward" color="light"></ion-icon>
+						</button>
+					</ion-col>
+					</ion-row>		
+				</ion-card-content>		
+			</ion-grid>
+		</ion-card>
+<ion-card style="border-radius: 3px; background-color:#1E90FF;" *ngIf="item.claim_status=='Processing' || item.claim_status=='Waiting for Approval' || item.claim_status=='Material Received' || item.claim_status=='Approved' || item.claim_status=='Sales Person Approved' || item.claim_status=='Documents Needed' || item.claim_status=='Partially Cancelled'">
+			<ion-grid>
+				<ion-card-content style="color: #FFFFFF;">
+					<ion-row style="margin-left:-20px;">
+					<ion-col col-10>
+						<ion-row class="bottomRow">	
+							<ion-col col-3><strong>No</strong></ion-col><ion-col col-1 text-center> : </ion-col><ion-col col-8>{{item.invoice_no}}</ion-col>
+						</ion-row>
+						<ion-row class="bottomRow">	
+							<ion-col col-3><strong>Date</strong></ion-col><ion-col col-1 text-center> : </ion-col><ion-col col-8>{{item.invoice_date|date}}</ion-col>
+						</ion-row>
+						<ion-row class="bottomRow">	
+							<ion-col col-3><strong>Status</strong></ion-col><ion-col col-1 text-center> : </ion-col><ion-col col-8>{{item.claim_status}}</ion-col>
+						</ion-row>						
+					</ion-col>
+					<ion-col col-2 right (click)="ViewClick(item.invoice_no)">
+						<button ion-button color="primary">
+								<ion-icon name="ios-arrow-forward" color="light"></ion-icon>
+						</button>
+					</ion-col>
+					</ion-row>		
+				</ion-card-content>		
+			</ion-grid>
+		</ion-card>					
+	</ion-list>
+</ion-list> 	
+<ion-list *ngIf="!typee">
+    <ion-card style="border-radius: 3px;">
+	<ion-grid>
+	<ion-card-content style="color: #333333;">
+		<ion-row>	
+				<ion-col col-12 text-center><strong>No Records Found</strong></ion-col>
+		</ion-row>		
+		</ion-card-content>		
+	</ion-grid>
+</ion-card> 
+</ion-list>
+</ion-content>

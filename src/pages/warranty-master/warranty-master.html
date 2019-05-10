@@ -1,0 +1,112 @@
+<!--
+  Generated template for the WarrantyMasterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Claim List</ion-title>
+  </ion-navbar>
+<ion-toolbar>
+<ion-searchbar *ngIf="typee" (ionInput)="getItems($event)" placeholder="Search Invoice / Claim Status"></ion-searchbar>
+<ion-searchbar *ngIf="!typee" placeholder="No Records To Search"></ion-searchbar>
+</ion-toolbar>
+</ion-header>
+
+
+<ion-content padding class="bg-content">
+
+<ion-list *ngIf="typee">
+<ion-list *ngFor="let item of typee; index as i">
+
+<ion-card style="border-radius: 3px; background-color:#FF0000;" *ngIf="item.claim_status=='Pending'">
+	<ion-list>
+	<ion-row>
+	<ion-col col-9>
+	<ion-row>
+		<ion-col col-4><strong>No</strong></ion-col><ion-col col-1> :</ion-col><ion-col col-7>&nbsp;{{item.invoice_no}}</ion-col>
+	</ion-row>
+	<ion-row class="bottomRow">
+		<ion-col col-4><strong>Date</strong></ion-col><ion-col col-1> :</ion-col><ion-col col-7>&nbsp;{{item.invoice_date|date}}</ion-col>
+	</ion-row>
+	</ion-col>
+	<ion-col col-2 right (click)="ViewData(item.claim_id)" style="margin-top:12px; margin-right:20px;">
+	<button ion-button color="primary">
+	<ion-icon name="ios-arrow-forward" color="light"></ion-icon>
+	</button>
+	</ion-col>
+	</ion-row>
+	<ion-card-content style="color: #333333; margin-left:-10px; margin-top:-20px;">
+	<ion-row class="bottomRow">
+		<ion-col col-3><strong>Status</strong></ion-col><ion-col col-1> :</ion-col><ion-col col-7>{{item.claim_status}}</ion-col>
+	</ion-row>
+	</ion-card-content>		
+	</ion-list>
+
+</ion-card>
+<ion-card style="border-radius: 3px; background-color:#008000;" *ngIf="item.claim_status=='Completed' || item.claim_status=='Cancelled' || item.claim_status=='Sales Person Cancelled'">
+	<ion-list>
+	<ion-row>
+	<ion-col col-9>
+	<ion-row>
+		<ion-col col-4><strong>No</strong></ion-col><ion-col col-1> :</ion-col><ion-col col-7>&nbsp;{{item.invoice_no}}</ion-col>
+	</ion-row>
+	<ion-row class="bottomRow">
+		<ion-col col-4><strong>Date</strong></ion-col><ion-col col-1> :</ion-col><ion-col col-7>&nbsp;{{item.invoice_date|date}}</ion-col>
+	</ion-row>
+	</ion-col>
+	<ion-col col-2 right (click)="ViewData(item.claim_id)" style="margin-top:12px; margin-right:20px;">
+	<button ion-button color="primary">
+	<ion-icon name="ios-arrow-forward" color="light"></ion-icon>
+	</button>
+	</ion-col>
+	</ion-row>
+	<ion-card-content style="color: #333333; margin-left:-10px; margin-top:-20px;">
+	<ion-row class="bottomRow">
+		<ion-col col-3><strong>Status</strong></ion-col><ion-col col-1> :</ion-col><ion-col col-7>{{item.claim_status}}</ion-col>
+	</ion-row>
+	</ion-card-content>		
+	</ion-list>
+
+</ion-card>
+<ion-card style="border-radius: 3px; background-color:#1E90FF;" *ngIf="item.claim_status=='Processing' || item.claim_status=='Waiting for Approval' || item.claim_status=='Material Received' || item.claim_status=='Approved' || item.claim_status=='Sales Person Approved' || item.claim_status=='Documents Needed' || item.claim_status=='Partially Cancelled'">
+	<ion-list>
+	<ion-row>
+	<ion-col col-9>
+	<ion-row>
+		<ion-col col-4><strong>No</strong></ion-col><ion-col col-1> :</ion-col><ion-col col-7>&nbsp;{{item.invoice_no}}</ion-col>
+	</ion-row>
+	<ion-row class="bottomRow">
+		<ion-col col-4><strong>Date</strong></ion-col><ion-col col-1> :</ion-col><ion-col col-7>&nbsp;{{item.invoice_date|date}}</ion-col>
+	</ion-row>
+	</ion-col>
+	<ion-col col-2 right (click)="ViewData(item.claim_id)" style="margin-top:12px; margin-right:20px;">
+	<button ion-button color="primary">
+	<ion-icon name="ios-arrow-forward" color="light"></ion-icon>
+	</button>
+	</ion-col>
+	</ion-row>
+	<ion-card-content style="color: #333333; margin-left:-10px; margin-top:-20px;">
+	<ion-row class="bottomRow">
+		<ion-col col-3><strong>Status</strong></ion-col><ion-col col-1> :</ion-col><ion-col col-7>{{item.claim_status}}</ion-col>
+	</ion-row>
+	</ion-card-content>		
+	</ion-list>
+
+</ion-card>
+</ion-list>
+</ion-list>
+  <ion-list *ngIf="!typee">
+    <ion-card style="border-radius: 3px;">
+	<ion-grid>
+	<ion-card-content style="color: #333333;">
+		<ion-row>	
+				<ion-col col-12 text-center><strong>No Records Found</strong></ion-col>
+		</ion-row>		
+		</ion-card-content>		
+	</ion-grid>
+</ion-card> 
+</ion-list>
+</ion-content>

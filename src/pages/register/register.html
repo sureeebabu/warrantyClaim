@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+
+    <ion-title>&nbsp;</ion-title>
+
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+<img src="../../assets/imgs/simpson.jpg" style="height:20%; width:100%; padding-left:20px;" />
+<form (ngSubmit)="Register()">
+<ion-item>
+  <ion-label floating>Full Name :</ion-label>
+  <ion-input type="text" [(ngModel)]="Name" name="Name" placeholder="Full Name"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label floating>Customer Code :</ion-label>
+  <ion-input type="text" [(ngModel)]="CustCode" name="CustCode" placeholder="Customer Code"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label floating>User Name :</ion-label>
+  <ion-input type="text" [(ngModel)]="Username" name="Username" placeholder="User Name"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label floating>Password :</ion-label>
+  <ion-input type="password" [(ngModel)]="Password" name="Password" placeholder="Password"></ion-input>
+</ion-item>
+   <ion-input type="hidden" [readonly]="readonly" [disabled]="true" [(ngModel)]="MobileNumber" name="MobileNumber"></ion-input>
+   <ion-input type="hidden" [readonly]="readonly" [disabled]="true" [(ngModel)]="MobileModel" name="MobileModel"></ion-input>
+   <ion-input type="hidden" [readonly]="readonly" [disabled]="true" [(ngModel)]="MobileSerial" name="MobileSerial"></ion-input>
+   <ion-input type="hidden" [readonly]="readonly" [disabled]="true" [(ngModel)]="FCMID" name="FCMID"></ion-input>
+
+ <ion-row center>  
+ <ion-col text-center>   
+<button ion-button type='submit'>Register</button>
+ </ion-col> 
+</ion-row>
+ <ion-row center>  
+  <ion-col text-right (click)="LoginMeth()">   
+ <h6 ion-text color="primary" >Login ?</h6>
+ </ion-col> 
+</ion-row>
+</form>
+</ion-content>
